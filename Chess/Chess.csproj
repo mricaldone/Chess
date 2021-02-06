@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE887567-A8F4-4509-A203-B8EF7244F7EC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chess</RootNamespace>
+    <AssemblyName>Chess</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="board\Board.cs" />
+    <Compile Include="board\pieces\BlackTower.cs" />
+    <Compile Include="board\pieces\BlackHorse.cs" />
+    <Compile Include="board\pieces\BlackKing.cs" />
+    <Compile Include="board\pieces\BlackQueen.cs" />
+    <Compile Include="board\pieces\WhiteKing.cs" />
+    <Compile Include="board\pieces\WhiteQueen.cs" />
+    <Compile Include="board\pieces\WhiteHorse.cs" />
+    <Compile Include="board\pieces\WhiteTower.cs" />
+    <Compile Include="board\pieces\Horse.cs" />
+    <Compile Include="board\pieces\King.cs" />
+    <Compile Include="board\pieces\NullPiece.cs" />
+    <Compile Include="board\pieces\Bishop.cs" />
+    <Compile Include="board\pieces\BlackBishop.cs" />
+    <Compile Include="board\pieces\BlackPawn.cs" />
+    <Compile Include="board\pieces\Queen.cs" />
+    <Compile Include="board\pieces\Tower.cs" />
+    <Compile Include="board\pieces\WhiteBishop.cs" />
+    <Compile Include="board\pieces\WhitePawn.cs" />
+    <Compile Include="board\Square.cs" />
+    <Compile Include="board\pieces\Pawn.cs" />
+    <Compile Include="board\pieces\Piece.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

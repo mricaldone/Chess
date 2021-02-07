@@ -11,5 +11,9 @@ namespace Chess.board.pieces
         public abstract void moveWhitePieceTo(BoardSquare target);
         public abstract void replaceWithBlackPiece(Piece new_piece);
         public abstract void replaceWithWhitePiece(Piece new_piece);
+        public abstract void canMove(BoardSquare source, BoardSquare target);
+        public abstract bool isWhite();
+        public abstract bool isBlack();
+        public abstract bool isNull();
     }
 }

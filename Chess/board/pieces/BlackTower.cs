@@ -10,5 +10,12 @@ namespace Chess.board.pieces
         {
             Console.Write(" \u265C ");
         }
+
+        public override void canMove(BoardSquare source, BoardSquare target)
+        {
+            if (!target.getPiece().isBlack() && target.rowNumber() == source.rowNumber()) return;
+            if (!target.getPiece().isBlack() && target.columnNumber() == source.columnNumber()) return;
+            throw new MovementError();
+        }
     }
 }

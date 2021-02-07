@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chess.board.pieces
 {
-    public abstract class BlackPiece : Piece
+    public abstract class BlackPiece : RealPiece
     {
         public override void moveBlackPieceTo(BoardSquare target)
         {
@@ -24,6 +24,16 @@ namespace Chess.board.pieces
         public override void replaceWithWhitePiece(Piece new_piece)
         {
             //throw new MovementError();
+        }
+
+        public override bool isWhite()
+        {
+            return false;
+        }
+
+        public override bool isBlack()
+        {
+            return true;
         }
 
     }

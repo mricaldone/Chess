@@ -30,5 +30,26 @@ namespace Chess.board.pieces
         {
             //throw new MovementError();
         }
+
+        public override bool isNull()
+        {
+            return true;
+        }
+
+        public override bool isBlack()
+        {
+            return false;
+        }
+
+        public override bool isWhite()
+        {
+            return false;
+        }
+
+        public override void canMove(BoardSquare source, BoardSquare target)
+        {
+            throw new MovementError();
+        }
+
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="board\pieces\BlackKing.cs" />
     <Compile Include="board\pieces\BlackQueen.cs" />
     <Compile Include="board\pieces\Piece.cs" />
+    <Compile Include="board\pieces\RealPiece.cs" />
     <Compile Include="board\pieces\WhiteKing.cs" />
     <Compile Include="board\pieces\WhitePiece.cs" />
     <Compile Include="board\pieces\WhiteQueen.cs" />

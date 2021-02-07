@@ -8,9 +8,23 @@ namespace Chess.board
     public class BoardSquare
     {
         private Piece piece;
+        private uint row;
+        private uint column;
 
-        public BoardSquare(){
+        public BoardSquare(uint row, uint column){
             this.piece = new NullPiece();
+            this.row = row;
+            this.column = column;
+        }
+
+        public uint rowNumber()
+        {
+            return this.row;
+        }
+
+        public uint columnNumber()
+        {
+            return this.column;
         }
 
         public void setBlackPiece(Piece piece)
@@ -41,6 +55,7 @@ namespace Chess.board
         public void moveBlackPieceTo(BoardSquare target)
         {
             if (this == target) throw new MovementError();
+            this.piece.canMove(this, target);
             this.piece.moveBlackPieceTo(target);
             this.piece = new NullPiece();
         }
@@ -48,9 +63,14 @@ namespace Chess.board
         public void moveWhitePieceTo(BoardSquare target)
         {
             if (this == target) throw new MovementError();
+            this.piece.canMove(this, target);
             this.piece.moveWhitePieceTo(target);
             this.piece = new NullPiece();
         }
 
+        public Piece getPiece()
+        {
+            return this.piece;
+        }
     }
 }

@@ -4,14 +4,11 @@ using System.Text;
 
 namespace Chess.board.pieces
 {
-    class WhitePawn : Pawn
+    class WhitePawn : WhitePiece
     {
         public override void print()
         {
-            ConsoleColor current_color = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("\u2659");
-            Console.ForegroundColor = current_color;
+            Console.Write(" \u2659 ");
         }
     }
 }

@@ -38,30 +38,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="board\BlackPieces.cs" />
     <Compile Include="board\Board.cs" />
+    <Compile Include="board\pieces\BlackPiece.cs" />
     <Compile Include="board\pieces\BlackTower.cs" />
     <Compile Include="board\pieces\BlackHorse.cs" />
     <Compile Include="board\pieces\BlackKing.cs" />
     <Compile Include="board\pieces\BlackQueen.cs" />
+    <Compile Include="board\pieces\Piece.cs" />
     <Compile Include="board\pieces\WhiteKing.cs" />
+    <Compile Include="board\pieces\WhitePiece.cs" />
     <Compile Include="board\pieces\WhiteQueen.cs" />
     <Compile Include="board\pieces\WhiteHorse.cs" />
     <Compile Include="board\pieces\WhiteTower.cs" />
-    <Compile Include="board\pieces\Horse.cs" />
-    <Compile Include="board\pieces\King.cs" />
     <Compile Include="board\pieces\NullPiece.cs" />
-    <Compile Include="board\pieces\Bishop.cs" />
     <Compile Include="board\pieces\BlackBishop.cs" />
     <Compile Include="board\pieces\BlackPawn.cs" />
-    <Compile Include="board\pieces\Queen.cs" />
-    <Compile Include="board\pieces\Tower.cs" />
     <Compile Include="board\pieces\WhiteBishop.cs" />
     <Compile Include="board\pieces\WhitePawn.cs" />
-    <Compile Include="board\Square.cs" />
-    <Compile Include="board\pieces\Pawn.cs" />
-    <Compile Include="board\pieces\Piece.cs" />
+    <Compile Include="board\BoardSquare.cs" />
+    <Compile Include="board\WhitePieces.cs" />
+    <Compile Include="CoordinateError.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Movement.cs" />
+    <Compile Include="MovementError.cs" />
+    <Compile Include="Pieces.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Turns.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

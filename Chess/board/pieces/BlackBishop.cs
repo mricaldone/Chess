@@ -4,14 +4,12 @@ using System.Text;
 
 namespace Chess.board.pieces
 {
-    class BlackBishop : Bishop
+    class BlackBishop : BlackPiece
     {
         public override void print()
         {
-            ConsoleColor current_color = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("\u265D");
-            Console.ForegroundColor = current_color;
+            Console.Write(" \u265D ");
         }
+
     }
 }

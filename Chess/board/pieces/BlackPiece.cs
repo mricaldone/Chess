@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Chess.board.pieces
 {
-    class NullPiece : Piece
+    public abstract class BlackPiece : Piece
     {
-        public override void print()
+        public override void moveBlackPieceTo(BoardSquare target)
         {
-            Console.Write("   ");
+            target.setBlackPiece(this);
         }
 
         public override void moveWhitePieceTo(BoardSquare target)
@@ -16,19 +16,15 @@ namespace Chess.board.pieces
             throw new MovementError();
         }
 
-        public override void moveBlackPieceTo(BoardSquare target)
-        {
-            throw new MovementError();
-        }
-
         public override void replaceWithBlackPiece(Piece new_piece)
         {
-            //throw new MovementError();
+            throw new MovementError();
         }
 
         public override void replaceWithWhitePiece(Piece new_piece)
         {
             //throw new MovementError();
         }
+
     }
 }

@@ -5,9 +5,9 @@ using Chess.board.pieces;
 
 namespace Chess.board
 {
-    class Board
+    public class Board
     {
-        private Square[,] squares = new Square[8,8];
+        private BoardSquare[,] squares = new BoardSquare[8,8];
 
         public Board()
         {
@@ -20,27 +20,9 @@ namespace Chess.board
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    this.squares[i, j] = new Square();
+                    this.squares[i, j] = new BoardSquare();
                 }
             }
-            this.squares[7,0].set(new WhiteTower());
-            this.squares[7,1].set(new WhiteHorse());
-            this.squares[7,2].set(new WhiteBishop());
-            this.squares[7,3].set(new WhiteQueen());
-            this.squares[7,4].set(new WhiteKing());
-            this.squares[7,5].set(new WhiteBishop());
-            this.squares[7,6].set(new WhiteHorse());
-            this.squares[7,7].set(new WhiteTower());
-            for (int j = 0; j < 8; j++) this.squares[6, j].set(new WhitePawn());
-            for (int j = 0; j < 8; j++) this.squares[1, j].set(new BlackPawn());
-            this.squares[0,0].set(new BlackTower());
-            this.squares[0,1].set(new BlackHorse());
-            this.squares[0,2].set(new BlackBishop());
-            this.squares[0,3].set(new BlackQueen());
-            this.squares[0,4].set(new BlackKing());
-            this.squares[0,5].set(new BlackBishop());
-            this.squares[0,6].set(new BlackHorse());
-            this.squares[0,7].set(new BlackTower());
         }
 
         public void print()
@@ -59,9 +41,7 @@ namespace Chess.board
                         bg_color = ConsoleColor.DarkGray;
                     }
                     Console.BackgroundColor = bg_color;
-                    Console.Write(" ");
                     this.squares[i, j].print();
-                    Console.Write(" ");
                 }
                 Console.BackgroundColor = current_color;
                 Console.Write(String.Format(" {0} ", 8 - i));
@@ -69,6 +49,39 @@ namespace Chess.board
             }
             Console.BackgroundColor = current_color;
             Console.WriteLine("    a  b  c  d  e  f  g  h ");
+        }
+        
+        public void moveWhitePiece(Movement movement)
+        {
+            try
+            {
+                BoardSquare target = this.squares[movement.target.row, movement.target.column];
+                BoardSquare source = this.squares[movement.source.row, movement.source.column];
+                source.moveWhitePieceTo(target);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new MovementError();
+            }
+        }
+
+        public void moveBlackPiece(Movement movement)
+        {
+            try
+            {
+                BoardSquare target = this.squares[movement.target.row, movement.target.column];
+                BoardSquare source = this.squares[movement.source.row, movement.source.column];
+                source.moveBlackPieceTo(target);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new MovementError();
+            }
+        }
+        
+        public void set(Piece piece, uint i, uint j)
+        {
+            this.squares[i, j].set(piece);
         }
 
     }

@@ -2,3 +2,4 @@ C:\Users\Matías\Documents\GitHub\Chess\Chess\bin\Debug\Chess.exe
 C:\Users\Matías\Documents\GitHub\Chess\Chess\bin\Debug\Chess.pdb
 C:\Users\Matías\Documents\GitHub\Chess\Chess\obj\x86\Debug\Chess.exe
 C:\Users\Matías\Documents\GitHub\Chess\Chess\obj\x86\Debug\Chess.pdb
+C:\Users\Matías\Documents\GitHub\Chess\Chess\obj\x86\Debug\Chess.csprojResolveAssemblyReference.cache

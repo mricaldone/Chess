@@ -4,14 +4,11 @@ using System.Text;
 
 namespace Chess.board.pieces
 {
-    class BlackQueen : Queen
+    class BlackQueen : BlackPiece
     {
         public override void print()
         {
-            ConsoleColor current_color = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("\u265B");
-            Console.ForegroundColor = current_color;
+            Console.Write(" \u265B ");
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Chess.board.pieces
             Console.Write(" \u2658 ");
         }
 
-        public override void canMove(BoardSquare source, BoardSquare target)
+        public override void movePiece(Board board, BoardSquare source, BoardSquare target)
         {
             if (!target.getPiece().isWhite() && source.rowNumber() + 1 == target.rowNumber() && source.columnNumber() + 2 == target.columnNumber()) return;
             if (!target.getPiece().isWhite() && source.rowNumber() + 1 == target.rowNumber() && source.columnNumber() - 2 == target.columnNumber()) return;

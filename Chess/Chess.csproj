@@ -66,6 +66,7 @@
     <Compile Include="Pieces.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tests\TestManager.cs" />
     <Compile Include="Turns.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

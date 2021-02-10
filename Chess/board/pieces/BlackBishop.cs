@@ -11,11 +11,17 @@ namespace Chess.board.pieces
             Console.Write(" \u265D ");
         }
 
-        public override void canMove(BoardSquare source, BoardSquare target)
+        private bool canMove(Board board, BoardSquare source, BoardSquare target)
         {
-            if (!target.getPiece().isBlack() && source.rowNumber() - target.rowNumber() == source.columnNumber() - target.columnNumber()) return;
-            if (!target.getPiece().isBlack() && source.rowNumber() - target.rowNumber() == target.columnNumber() - source.columnNumber()) return;
-            throw new MovementError();
+            if (board.isDiagonalWayBlocked(source, target)) return false;
+            if (!target.getPiece().isBlack() && source.rowNumber() - target.rowNumber() == source.columnNumber() - target.columnNumber()) return true;
+            if (!target.getPiece().isBlack() && source.rowNumber() - target.rowNumber() == target.columnNumber() - source.columnNumber()) return true;
+            return false;
+        }
+
+        public override void movePiece(Board board, BoardSquare source, BoardSquare target)
+        {
+            if (!this.canMove(board, source, target)) throw new MovementError();
         }
 
     }

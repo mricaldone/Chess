@@ -11,12 +11,12 @@ namespace Chess.board.pieces
             Console.Write("   ");
         }
 
-        public override void moveWhitePieceTo(BoardSquare target)
+        public override void moveWhitePiece(Board board, BoardSquare source, BoardSquare target)
         {
             throw new MovementError();
         }
 
-        public override void moveBlackPieceTo(BoardSquare target)
+        public override void moveBlackPiece(Board board, BoardSquare source, BoardSquare target)
         {
             throw new MovementError();
         }
@@ -46,7 +46,7 @@ namespace Chess.board.pieces
             return false;
         }
 
-        public override void canMove(BoardSquare source, BoardSquare target)
+        public override void movePiece(Board board, BoardSquare source, BoardSquare target)
         {
             throw new MovementError();
         }

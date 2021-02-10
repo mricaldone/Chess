@@ -11,8 +11,9 @@ namespace Chess.board.pieces
             Console.Write(" \u2656 ");
         }
 
-        public override void canMove(BoardSquare source, BoardSquare target)
+        public override void movePiece(Board board, BoardSquare source, BoardSquare target)
         {
+            if (board.isVerticalWayBlocked(source, target) || board.isHorizontalWayBlocked(source, target)) throw new MovementError();
             if (!target.getPiece().isWhite() && target.rowNumber() == source.rowNumber()) return;
             if (!target.getPiece().isWhite() && target.columnNumber() == source.columnNumber()) return;
             throw new MovementError();

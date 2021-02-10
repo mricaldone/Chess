@@ -10,21 +10,24 @@ namespace Chess.board
         private Piece piece;
         private uint row;
         private uint column;
+        private Board board;
 
-        public BoardSquare(uint row, uint column){
+        public BoardSquare(Board board, uint row, uint column)
+        {
             this.piece = new NullPiece();
             this.row = row;
             this.column = column;
+            this.board = board;
         }
 
-        public uint rowNumber()
+        public int rowNumber()
         {
-            return this.row;
+            return (int) this.row;
         }
 
-        public uint columnNumber()
+        public int columnNumber()
         {
-            return this.column;
+            return (int) this.column;
         }
 
         public void setBlackPiece(Piece piece)
@@ -55,16 +58,14 @@ namespace Chess.board
         public void moveBlackPieceTo(BoardSquare target)
         {
             if (this == target) throw new MovementError();
-            this.piece.canMove(this, target);
-            this.piece.moveBlackPieceTo(target);
+            this.piece.moveBlackPiece(this.board, this, target);
             this.piece = new NullPiece();
         }
 
         public void moveWhitePieceTo(BoardSquare target)
         {
             if (this == target) throw new MovementError();
-            this.piece.canMove(this, target);
-            this.piece.moveWhitePieceTo(target);
+            this.piece.moveWhitePiece(this.board, this, target);
             this.piece = new NullPiece();
         }
 
@@ -72,5 +73,6 @@ namespace Chess.board
         {
             return this.piece;
         }
+
     }
 }

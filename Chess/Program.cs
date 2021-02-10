@@ -4,6 +4,7 @@ using System.Text;
 using Chess.board.pieces;
 using Chess.board;
 using System.Threading;
+using Chess.tests;
 
 namespace Chess
 {
@@ -12,6 +13,7 @@ namespace Chess
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
+            //new TestManager();
             Board board = new Board();
             BlackPieces blacks = new BlackPieces(board);
             WhitePieces whites = new WhitePieces(board);

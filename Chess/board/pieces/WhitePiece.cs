@@ -6,13 +6,14 @@ namespace Chess.board.pieces
 {
     public abstract class WhitePiece : RealPiece
     {
-        public override void moveBlackPieceTo(BoardSquare target)
+        public override void moveBlackPiece(Board board, BoardSquare source, BoardSquare target)
         {
             throw new MovementError();
         }
 
-        public override void moveWhitePieceTo(BoardSquare target)
+        public override void moveWhitePiece(Board board, BoardSquare source, BoardSquare target)
         {
+            this.movePiece(board, source, target);
             target.setWhitePiece(this);
         }
 

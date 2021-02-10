@@ -45,6 +45,5 @@ namespace Chess
             if (op < 0) throw new TransFormError();
             return (uint)op;
         }
-
     }
 }
